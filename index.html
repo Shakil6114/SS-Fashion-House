@@ -1,94 +1,117 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SS Fashion House</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f8f9fa, #e0eafc);
-      color: #333;
-    }
-    header {
-      background-color: #e91e63;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 2rem;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1521334884684-d80222895322?fit=crop&w=1400&q=80') no-repeat center center/cover;
-      color: white;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.5rem;
-    }
-    .call-button {
-      background-color: #fff;
-      color: #e91e63;
-      border: 2px solid #e91e63;
-      padding: 12px 25px;
-      margin-top: 20px;
-      border-radius: 30px;
-      font-size: 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
-    .call-button:hover {
-      background-color: #e91e63;
-      color: white;
-    }
-    footer {
-      background-color: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পেমেন্ট করুন</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .payment-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .payment-card img {
+            width: 150px;
+            height: 150px;
+            margin: 10px 0;
+        }
+        .payment-card p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        #success-message {
+            display: none;
+            color: green;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  SS Fashion House
-</header>
+<h1>আপনার পেমেন্ট করুন</h1>
 
-<section class="hero">
-  <h1>Welcome to SS Fashion House</h1>
-  <p>Your style, our passion!</p>
-  <a href="tel:+880123456789" class="call-button">Call Now</a>
-</section>
+<div class="payment-options">
+    <div class="payment-card">
+        <h3>বিকাশ</h3>
+        <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=01941222010" alt="Bkash QR">
+        <p>নাম্বার: <strong>01941222010</strong></p>
+    </div>
+    <div class="payment-card">
+        <h3>নগদ</h3>
+        <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=01941222010" alt="Nagad QR">
+        <p>নাম্বার: <strong>01941222010</strong></p>
+    </div>
+    <div class="payment-card">
+        <h3>রকেট</h3>
+        <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=01941222010" alt="Rocket QR">
+        <p>নাম্বার: <strong>01941222010</strong></p>
+    </div>
+    <div class="payment-card">
+        <h3>উপায়</h3>
+        <img src="https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=01941222010" alt="Upay QR">
+        <p>নাম্বার: <strong>01941222010</strong></p>
+    </div>
+</div>
 
-<section>
-  <h2>About Us</h2>
-  <p>We are a premium fashion house offering stylish and modern collections for men and women. Discover your fashion statement with us.</p>
-</section>
+<h2>পেমেন্ট করার পর নিচে তথ্য দিন</h2>
 
-<section>
-  <h2>Contact</h2>
-  <p>Phone: +880123456789</p>
-  <p>Email: ssfashion@example.com</p>
-</section>
+<form onsubmit="showSuccessMessage(); return false;">
+    <input type="text" name="name" placeholder="আপনার নাম" required>
+    <input type="text" name="trxid" placeholder="Transaction ID" required>
+    <textarea name="note" placeholder="অতিরিক্ত মন্তব্য (যদি থাকে)"></textarea>
+    <button type="submit">সাবমিট করুন</button>
+    <div id="success-message">আপনার পেমেন্ট তথ্য সফলভাবে গ্রহণ করা হয়েছে। ধন্যবাদ!</div>
+</form>
 
-<footer>
-  &copy; 2025 SS Fashion House. All rights reserved.
-</footer>
+<script>
+    function showSuccessMessage() {
+        document.getElementById('success-message').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
